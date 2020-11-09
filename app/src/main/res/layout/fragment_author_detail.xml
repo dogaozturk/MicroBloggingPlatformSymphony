@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.doga.microbloggingplatformsymphony.ui.author.AuthorViewModel" />
+
+        <variable
+            name="author"
+            type="com.doga.microbloggingplatformsymphony.domain.model.Author" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardview_light_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/authorProfileContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_author_profile"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
+            <TextView
+                android:id="@+id/tv_author_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_author_profile"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="@{`Name : `+author.userName}"/>
+            <TextView
+                android:id="@+id/tv_author_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_author_name"
+                app:layout_constraintStart_toEndOf="@id/iv_author_profile"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="@{`Email : `+author.email}"/>
+            <TextView
+                android:id="@+id/tv_author_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_author_email"
+                app:layout_constraintStart_toEndOf="@id/iv_author_profile"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="@{`Address : `+author.address.latitude + ` , `+ author.address.longitude}"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPosts"
+            app:layout_constraintTop_toBottomOf="@+id/authorProfileContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

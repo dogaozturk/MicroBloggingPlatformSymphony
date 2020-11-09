@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MicroBloggingPlatformSymphony</string>
+    <string name="title_author_list">Author List</string>
+    <string name="title_author_profile">Author Profile</string>
+    <string name="title_post_detail">Post Detail</string>
+</resources>
