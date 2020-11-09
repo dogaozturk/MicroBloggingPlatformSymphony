@@ -41,9 +41,6 @@ class AuthorAdapter(val itemClickListener: AuthorItemClickListener,
                 .into(binding.ivAuthor)
             binding.executePendingBindings()
         }
-
-
-
     }
 
     interface AuthorItemClickListener {

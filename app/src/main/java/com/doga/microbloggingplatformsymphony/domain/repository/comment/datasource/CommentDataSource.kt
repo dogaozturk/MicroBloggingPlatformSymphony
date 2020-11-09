@@ -79,10 +79,5 @@ class CommentDataSource(private val authorId : Int,
     }
 
     fun retryAllFailed() {
-        val prevRetry = retry
-        retry = null
-//        prevRetry?.let { retry ->
-//            retryExecutor.execute { retry() }
-//        }
     }
 }

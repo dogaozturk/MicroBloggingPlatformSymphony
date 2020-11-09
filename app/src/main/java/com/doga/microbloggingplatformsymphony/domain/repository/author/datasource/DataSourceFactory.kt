@@ -18,9 +18,4 @@ private val githubApi: BlogWebService) : DataSource.Factory<Int, Author>() {
         this.authorData.postValue(source)
         return source
     }
-
-    fun getData() : MutableLiveData<AuthorDataSource> {
-        return authorData
-    }
-
 }

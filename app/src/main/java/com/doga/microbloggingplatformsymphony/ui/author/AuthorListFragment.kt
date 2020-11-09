@@ -64,5 +64,4 @@ class AuthorListFragment : Fragment(), AuthorAdapter.AuthorItemClickListener {
             ?.addToBackStack(AuthorDetailFragment::class.java.name)
             ?.commit()
     }
-
 }
